@@ -24,8 +24,13 @@ int	main(int argc, char **argv)
 	}
 	clone = clone_argv(argv[1]);
 	args = create_args(clone);
-	(void)args;
 	matrix = init_matrix();
+	matrix = solve_game(matrix, args);
+	if (matrix[0][0] == 9)
+	{
+		ft_putstr("No solution found!");
+		return (-1);
+	}
 	print_matrix(matrix);
 	return (0);
 }

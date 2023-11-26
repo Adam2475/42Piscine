@@ -25,6 +25,10 @@ void    fill_matrix(int **matrix);
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
 int	**init_matrix();
+int	**solve_game(int **matrix, int **args);
 void    print_matrix(int **matrix);
+int	**clue_1(int **matrix, int **args, int i, int j);
+int	**clue_4(int **matrix, int **args, int i, int j);
+int	**clue_3(int **matrix, int **args, int i, int j);
 
 #endif

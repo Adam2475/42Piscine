@@ -6,7 +6,7 @@ OBJS = $(SRC:.c=.o)
 SRC = ft_putstr.c \
 	init.c main.c \
 	ft_putchar.c ft_atoi.c \
-	ft_putnbr.c parsing.c
+	ft_putnbr.c parsing.c solving.c
 	
 all: $(NAME)
 

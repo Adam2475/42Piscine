@@ -23,10 +23,10 @@ void    print_matrix(int **matrix)
         i = 0;
         while (i < 4)
         {
-            ft_putnbr("%d", matrix[j][i]);
+            ft_putnbr(matrix[j][i]);
             i++;
         }
-        ft_putchar("\n");
+        ft_putchar('\n');
         j++;
     }
 }

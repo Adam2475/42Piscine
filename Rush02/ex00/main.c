@@ -23,7 +23,9 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	clone = clone_argv(argv[1]);
-	args = check_args(clone);
+	args = create_args(clone);
+	(void)args;
 	matrix = init_matrix();
+	print_matrix(matrix);
 	return (0);
 }

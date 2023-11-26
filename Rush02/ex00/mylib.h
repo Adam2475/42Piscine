@@ -20,6 +20,11 @@
 int	ft_atoi(char *str);
 void	ft_putstr(char *str);
 char	*clone_argv(char *argv);
-int	**check_args(char *argv);
+int	**create_args(char *argv);
+void    fill_matrix(int **matrix);
+void	ft_putnbr(int nb);
+void	ft_putchar(char c);
+int	**init_matrix();
+void    print_matrix(int **matrix);
 
 #endif

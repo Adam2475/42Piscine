@@ -5,26 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/18 16:25:35 by adapassa          #+#    #+#             */
-/*   Updated: 2023/11/18 16:26:09 by adapassa         ###   ########.fr       */
+/*   Created: 2023/11/13 16:42:13 by adapassa          #+#    #+#             */
+/*   Updated: 2023/11/13 16:42:36 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "mylib.h"
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-	
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write (1, &c, 1);
 }

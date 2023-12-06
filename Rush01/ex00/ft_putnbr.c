@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 11:14:33 by adapassa          #+#    #+#             */
-/*   Updated: 2023/11/25 12:00:38 by adapassa         ###   ########.fr       */
+/*   Created: 2023/11/20 15:18:05 by adapassa          #+#    #+#             */
+/*   Updated: 2023/11/20 15:18:07 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mylib.h"
 
-int	main(int argc, char **argv)
+void	ft_putnbr(int nb)
 {
-	char *clone;
-	int **args;
-	int **matrix;
-	if (argc != 2)
+	char	tmp;
+
+	if (nb == (-2147483648))
 	{
-		ft_putstr("Wrong number of arguments!");
-		return (0);
+		write(1, "-2147483648", 11);
+		return ;
 	}
-	clone = clone_argv(argv[1]);
-	args = create_args(clone);
-	matrix = init_matrix();
-	matrix = solve_game(matrix, args);
-	if (matrix[0][0] == 9)
+	else if (nb < 0)
 	{
-		ft_putstr("No solution found!");
-		return (-1);
+		write(1, "-", 1);
+		nb *= -1;
 	}
-	print_matrix(matrix);
-	return (0);
+	if (nb < 10)
+	{
+		tmp = nb + '0';
+		write (1, &tmp, 1);
+	}
+	else if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }

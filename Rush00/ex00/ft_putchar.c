@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 11:14:33 by adapassa          #+#    #+#             */
-/*   Updated: 2023/11/25 12:00:38 by adapassa         ###   ########.fr       */
+/*   Created: 2023/11/18 16:25:35 by adapassa          #+#    #+#             */
+/*   Updated: 2023/11/18 16:26:09 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylib.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	char *clone;
-	int **args;
-	int **matrix;
-	if (argc != 2)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+	
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putstr("Wrong number of arguments!");
-		return (0);
+		ft_putchar(str[i]);
+		i++;
 	}
-	clone = clone_argv(argv[1]);
-	args = create_args(clone);
-	matrix = init_matrix();
-	matrix = solve_game(matrix, args);
-	if (matrix[0][0] == 9)
-	{
-		ft_putstr("No solution found!");
-		return (-1);
-	}
-	print_matrix(matrix);
-	return (0);
 }

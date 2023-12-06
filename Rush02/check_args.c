@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adapassa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mapichec <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 11:22:37 by adapassa          #+#    #+#             */
-/*   Updated: 2023/11/25 11:25:25 by adapassa         ###   ########.fr       */
+/*   Created: 2023/12/02 13:53:36 by mapichec          #+#    #+#             */
+/*   Updated: 2023/12/02 18:06:49 by mapichec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylib.h"
+#include "lib_rush.h"
 
-void	ft_putstr(char *str)
+int	ft_check_arg(char **av, int ac)
 {
-	int	i;
-	
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
+	if (ac < 2 || ac > 3)
+		return (1);
+	if (is_num(av[ac - 1]))
+		return (1);
+	return (0);
 }

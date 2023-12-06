@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args_formatter.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adapassa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 11:14:33 by adapassa          #+#    #+#             */
-/*   Updated: 2023/11/25 12:00:38 by adapassa         ###   ########.fr       */
+/*   Created: 2023/12/02 14:35:25 by adapassa          #+#    #+#             */
+/*   Updated: 2023/12/02 16:30:36 by adapassa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mylib.h"
+#include "lib_rush.h"
 
-int	main(int argc, char **argv)
+int	*format_args(char *str, int size)
 {
-	char *clone;
-	int **args;
-	int **matrix;
-	if (argc != 2)
+	int	i;
+	int	j;
+	int	*tmp;
+	
+	tmp = NULL;
+	i = 0;
+	j = 0;
+	(void)size;
+	(void)str;
+	while (str[i] != '\0')
 	{
-		ft_putstr("Wrong number of arguments!");
-		return (0);
+		i++;
+		j++;
 	}
-	clone = clone_argv(argv[1]);
-	args = create_args(clone);
-	matrix = init_matrix();
-	matrix = solve_game(matrix, args);
-	if (matrix[0][0] == 9)
-	{
-		ft_putstr("No solution found!");
-		return (-1);
-	}
-	print_matrix(matrix);
-	return (0);
-}
+	return (tmp);
+} 
+
+//conversione
